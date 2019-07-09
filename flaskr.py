@@ -39,7 +39,7 @@ def diaoyong():
     # r=User.query.all()
     # return r
     # 删除所有的表
-    db.drop_all()
+    # db.drop_all()
     # 创建表
     db.create_all()
     ro1 = Role(name="admin")
