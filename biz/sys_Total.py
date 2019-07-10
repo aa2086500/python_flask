@@ -11,7 +11,7 @@ class sys_Total():
     sys_EndTime = db.Column(db.Date, default=datetime.now)
     sys_Delete = db.Column(db.Enum(Enum_Delete), default=Enum_Delete.未删除)
     sys_State = db.Column(db.Enum(Enum_State), default=Enum_State.可用)
-    sys_Timestamp = db.Column(db.BigInteger, default=int(time.time()))
+    # sys_Timestamp = db.Column(db.BigInteger, default=int(time.time()))
     sys_Remarks = db.Column(db.Text, default='')
     sys_Remarks1 = db.Column(db.Text, default='')
     sys_Remarks2 = db.Column(db.Text, default='')
