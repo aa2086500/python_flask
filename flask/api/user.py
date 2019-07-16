@@ -2,6 +2,7 @@
 # user
 from flask import Blueprint, request
 import flaskr
+import json
 from appcode.Encrypt import prpcrypt
 user = Blueprint('user', __name__)
 
@@ -14,11 +15,11 @@ def index():
     return str(r)
 
 
-@user.route('/lgoin/<paw>/')
-def lgoin(paw):
-    print(paw)
-    # account = request.form.getlist('account')
-    # paw = request.form.getlist('password')
+@user.route('/lgoin', methods=['POST', 'GET'])
+def lgoin():
+    json_data = request.json
+    account=json_data.get("username")
+    paw=json_data.get("password")
     sj = prpcrypt()
     re = sj.encrypt(paw)
     return re

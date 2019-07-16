@@ -14,13 +14,15 @@ db.init_app(app)
 @app.route('/')
 def sqldaoru():
     c = app.config['DB_DB']
-    r= flaskr.diaoyong()
+    r = flaskr.diaoyong()
     return r
     # return ''
 
 
 if __name__ == '__main__':
     # db.init_app(app)
-    app.run(host=app.config['HOST'],
-            port=app.config['PORT'],
-            debug=app.config['DEBUG'])
+    # app.run(host=app.config['HOST'],
+    #         port=app.config['PORT'],
+    #         debug=app.config['DEBUG'])
+    app.debug = False
+    app.run()
